@@ -1,0 +1,42 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+  body {
+    background-color: #0b1220;
+    background-image: radial-gradient(
+        circle at 15% 10%,
+        rgba(94, 234, 212, 0.07),
+        transparent 40%
+      ),
+      radial-gradient(circle at 85% 0%, rgba(244, 114, 182, 0.06), transparent 35%);
+    background-attachment: fixed;
+  }
+  ::selection {
+    background-color: #5eead4;
+    color: #0b1220;
+  }
+  :focus-visible {
+    outline: 2px solid #5eead4;
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg bg-signal px-5 py-2.5 font-semibold text-ink transition hover:bg-signal-soft focus-visible:outline-signal disabled:cursor-not-allowed disabled:opacity-50;
+  }
+  .btn-secondary {
+    @apply inline-flex items-center justify-center gap-2 rounded-lg border border-white/15 bg-white/5 px-5 py-2.5 font-semibold text-mist transition hover:border-signal/50 hover:bg-white/10;
+  }
+  .input-field {
+    @apply w-full rounded-lg border border-white/10 bg-ink-light px-4 py-2.5 text-mist placeholder:text-mist-dim/70 focus:border-signal/60 focus:outline-none focus:ring-1 focus:ring-signal/40;
+  }
+  .card {
+    @apply rounded-2xl border border-white/10 bg-ink-light/70 backdrop-blur;
+  }
+}
